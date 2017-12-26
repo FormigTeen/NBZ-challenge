@@ -3,15 +3,15 @@
 ## Descrição
 
 Desenvolva um painel de controle de vendas para um e-commerce, no painel devem haver 2 telas:
-1- Dashboard 
+1. Dashboard 
    Deve mostrar os últimos pedidos, valor total de vendas(receita), ticket médio, média diária e total de pedidos pagos(quantidade). 
-2- Painel BI
+2. Painel BI
    Deve mostrar o valor total de vendas(receita), ticket médio, média diária, total de pedidos pagos(quantidade), produtos mais vendidos por receita e por quantidade, cidades com mais pedidos e que geraram mais receita e pedidos pagos feitos no cartão X boleto. 
    
 ## Requisitos obrigatórios
-   - php7.0 >=
-   - laravel 5.5
-   - mysql
++  php7.0 >=
++  laravel 5.5
++  mysql
  
 ## Avaliação
    Será avaliado a escrita do código. Códigos mais modularizados receberão mais pontos, ou seja, muito código repetido será avaliado negativamente. Códigos bem organizados e comentados receberão mais pontos. Utilização de boas práticas serão avaliadas positivamente. 
