@@ -14,7 +14,7 @@ Deve mostrar o valor total de vendas(receita), ticket médio, média diária, to
 +  mysql
  
 ## Avaliação
-Será avaliado a escrita do código. Códigos mais modularizados receberão mais pontos, ou seja, muito código repetido será avaliado negativamente. Códigos bem organizados e comentados receberão mais pontos. Utilização de boas práticas serão avaliadas positivamente. 
+Será avaliado a escrita do código. Códigos mais modularizados receberão mais pontos, ou seja, muito código repetido será avaliado negativamente. Códigos bem organizados e comentados receberão mais pontos. Utilização de boas práticas serão avaliadas positivamente. A estética da aplicação será avaliada positivamente e será critério desempate. 
    
 ## Observações
 +  Não é necessário haver adição de vendas na aplicação, essas podem ser injetadas diretamente no banco de dados. 
