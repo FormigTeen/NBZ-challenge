@@ -3,10 +3,10 @@
 ## Descrição
 
 Desenvolva um painel de controle de vendas para um e-commerce, no painel devem haver 2 telas:
-1. Dashboard 
-   +  Deve mostrar os últimos pedidos, valor total de vendas(receita), ticket médio, média diária e total de pedidos pagos(quantidade). 
-2. Painel BI
-  +  Deve mostrar o valor total de vendas(receita), ticket médio, média diária, total de pedidos pagos(quantidade), produtos mais vendidos por receita e por quantidade, cidades com mais pedidos e que geraram mais receita e pedidos pagos feitos no cartão X boleto. 
+### 1. Dashboard 
+Deve mostrar os últimos pedidos, valor total de vendas(receita), ticket médio, média diária e total de pedidos pagos(quantidade). 
+### 2. Painel BI
+Deve mostrar o valor total de vendas(receita), ticket médio, média diária, total de pedidos pagos(quantidade), produtos mais vendidos por receita e por quantidade, cidades com mais pedidos e que geraram mais receita e pedidos pagos feitos no cartão X boleto. 
    
 ## Requisitos obrigatórios
 +  php7.0 >=
