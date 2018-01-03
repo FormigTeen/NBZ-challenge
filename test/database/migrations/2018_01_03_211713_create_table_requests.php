@@ -16,6 +16,8 @@ class CreateTableRequests extends Migration
         Schema::create('requests', function (Blueprint $table) {
             $table->increments('id');
             $table->timestamps();
+            $table->integer('quantity');
+            $table->boolean('type');
         });
     }
 
