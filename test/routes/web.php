@@ -12,5 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('dashboard');
 });
+
+Route::get('/dashboard', 'RenderController@dashboard')->name('dashboard');
+
+Route::get('/business', 'RenderController@business')->name('business');
