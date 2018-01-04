@@ -7,7 +7,7 @@
     <body>
 
         @section('content')
-        @endsection
+        @show
 
         @section('script')
             @include('templates.includes.scripts.basic')

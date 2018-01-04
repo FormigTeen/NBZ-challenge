@@ -13,12 +13,8 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Request::class, function (Faker $faker) {
+$factory->define(App\City::class, function (Faker $faker) {
     return [
-        'name' => $faker->words(2, true),
-        'quantity' => $faker->randomDigitNotNull,
-        'type' => $faker->boolean(),
-        'client_id' => \App\Client::inRandomOrder()->first()->id,
-        'product_id' => \App\Product::inRandomOrder()->first()->id,
+        'name' => $faker->unique()->city,
     ];
 });

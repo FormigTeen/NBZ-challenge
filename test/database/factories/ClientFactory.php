@@ -17,6 +17,7 @@ $factory->define(App\Client::class, function (Faker $faker) {
     return [
         'firstName' => $faker->firstName(),
         'lastName' => $faker->lastName(),
-        'email' => $faker->unique()->safeEmail,s
+        'email' => $faker->unique()->safeEmail,
+        'city_id' => \App\City::inRandomOrder()->first()->id,
     ];
 });
