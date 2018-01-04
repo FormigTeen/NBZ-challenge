@@ -35,8 +35,7 @@ Para entregar o desafio, basta fazer um fork desse repositorio e submeter um pul
 1. Atualize o Composer
 
 ```
-php vendor/bin/homestead make
-```
+composer update```
 
 2. Faça a configuração automática:
 
