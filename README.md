@@ -27,34 +27,51 @@ Para entregar o desafio, basta fazer um fork desse repositorio e submeter um pul
 
 ### Requisitos:
 + Vagrant >= 1.9
-+ VirtualBox 5.2
++ VirtualBox 5.2.x or 5.1.x ( Not Alpha or Beta )
++ Composer Global
 
-1. Execute o Seguinte comando para fazer a configuração automática na pasta 'test':
+0. Todos os Comandos serão na pasta 'test' e no Ambiente Linux
 
-Linux:
+1. Atualize o Composer
+
 ```
 php vendor/bin/homestead make
 ```
 
-Windows:
+2. Faça a configuração automática:
+
 ```
-vendor\\bin\\homestead make
+php vendor/bin/homestead make
 ```
 
-2. Habilite o Acesso ao Endereço do Projeto adicionanado a seguinte linha no arquivo '/etc/hosts'
+3. Habilite o Acesso ao Endereço do Projeto adicionanado a seguinte linha no arquivo '/etc/hosts'
 
 ```
 192.168.10.10  homestead.test
 ```
 
-3. Na pasta do Projeto, execute o seguinte comando para ligar a VM:
+4. Gere uma Chave para a Aplicação
+
+```
+php artisan key:generate
+```
+
+5. Na pasta do Projeto, execute o seguinte comando para ligar a VM:
 
 ```
 vagrant up
 ```
 
-4. Por ultimo, faça a migração:
+6. Faça as migrações:
 
 ```
 php artisan migrate:refresh --seed
+```
+
+7. Com a VM ligada, acesse o seguinte endereço para visualizar a aplicação: [https://homestead.test](https://homestead.test)
+
+8. Para desligar a VM, digite:
+
+```
+vagrant halt
 ```
