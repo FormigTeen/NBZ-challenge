@@ -74,11 +74,21 @@ class Request extends Model
     /**
      * @return int
      *
-     * Get Number of Requests Paid
+     * Get Number of Requests Paid with Card
      */
-    public static function quantityPay()
+    public static function quantityPayCard()
     {
-        return Request::where('pay', true)->count();
+        return Request::where('pay', true)->where('type', true)->count();
+    }
+
+    /**
+     * @return int
+     *
+     * Get Number of Requests Paid with Boleto
+     */
+    public static function quantityPayBoleto()
+    {
+        return Request::where('pay', true)->where('type', false)->count();
     }
 
     /**
@@ -88,7 +98,7 @@ class Request extends Model
      */
     public static function ticketValue()
     {
-        return self::quantityPay() / self::distClients();
+        return ( self::quantityPayBoleto() + self::quantityPayCard() ) / self::distClients();
     }
 
 }

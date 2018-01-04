@@ -6,6 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Client extends Model
 {
+    /**
+     * Get Full Name Client
+     *
+     * @return string
+     */
+    public function getNameAttribute()
+    {
+        return "{$this->firstName} {$this->lastName}";
+    }
+
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

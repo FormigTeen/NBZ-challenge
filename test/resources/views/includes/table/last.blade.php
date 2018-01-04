@@ -3,49 +3,27 @@
     <table class="table table-striped">
         <thead>
         <tr>
-            <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
+            <th>ID</th>
+            <th>Criado em</th>
+            <th>Cliente</th>
+            <th>Produto</th>
+            <th>Cidade</th>
+            <th>Quantidade</th>
+            <th>Total</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <td>1,001</td>
-            <td>Lorem</td>
-            <td>ipsum</td>
-            <td>dolor</td>
-            <td>sit</td>
-        </tr>
-        <tr>
-            <td>1,002</td>
-            <td>amet</td>
-            <td>consectetur</td>
-            <td>adipiscing</td>
-            <td>elit</td>
-        </tr>
-        <tr>
-            <td>1,003</td>
-            <td>Integer</td>
-            <td>nec</td>
-            <td>odio</td>
-            <td>Praesent</td>
-        </tr>
-        <tr>
-            <td>1,003</td>
-            <td>libero</td>
-            <td>Sed</td>
-            <td>cursus</td>
-            <td>ante</td>
-        </tr>
-        <tr>
-            <td>1,004</td>
-            <td>dapibus</td>
-            <td>diam</td>
-            <td>Sed</td>
-            <td>nisi</td>
-        </tr>
+        @foreach( $requests as $request )
+            <tr>
+                <td>{{ $request->id }}</td>
+                <td>{{ $request->created_at }}</td>
+                <td>{{ $request->client->name }}</td>
+                <td>{{ $request->product->name }}</td>
+                <td>{{ $request->client->city->name }}</td>
+                <td>{{ $request->quantity }}</td>
+                <td>R$ {{ number_format($request->value, 2) }}</td>
+            </tr>
+        @endforeach
         </tbody>
     </table>
 </div>

@@ -24,7 +24,11 @@ class Product extends Model
      */
     public function getQuantityRequestAttribute()
     {
-        return Request::where('product_id', $this->id)->count();
+        $list = Request::where('product_id', $this->id)->where('pay', true)->get(['quantity']);
+
+        return $list->sum(function ($request) {
+            return $request->quantity;
+        });
     }
 
     /**

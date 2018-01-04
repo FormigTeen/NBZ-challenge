@@ -139,6 +139,11 @@ return [
     'providers' => [
 
         /*
+         * Provider for Views Composers
+         */
+        App\Providers\ComposerServiceProvider::class,
+
+        /*
          * Laravel Framework Service Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
