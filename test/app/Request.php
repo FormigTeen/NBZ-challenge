@@ -6,6 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Request extends Model
 {
+
+    /**
+     * Get the Real Request's Value
+     *
+     * @return double
+     */
+    public function getValueAttribute()
+    {
+        return $this->quantity * $this->product->value;
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      *
@@ -28,14 +39,25 @@ class Request extends Model
     }
 
     /**
-     * @return mixed
+     * Get All Clients Distinct
      *
-     * Return Total Money with Requests
+     * return int
+     */
+    private static function distClients()
+    {
+        return \DB::table('requests')->where('pay', true)->distinct('client_id')->count('client_id');
+    }
+
+
+    /**
+     * @return double
+     *
+     * Return Total Money with Requests paid
      */
     public static function totalMoney()
     {
-        return Request::all()->sum(function ($request) {
-            return $request->quantity * $request->product->value;
+        return Request::where('pay', true)->get()->sum(function ($request) {
+            return $request->value;
         });
     }
 
@@ -59,5 +81,14 @@ class Request extends Model
         return Request::where('pay', true)->count();
     }
 
+    /**
+     * Get Ticket Value
+     *
+     * return double
+     */
+    public static function ticketValue()
+    {
+        return self::quantityPay() / self::distClients();
+    }
 
 }
