@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableClients extends Migration
+class AddPayCondition extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateTableClients extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
-            $table->increments('id');
-            $table->timestamps();
-            $table->string('firstName');
-            $table->string('lastName');
-            $table->string('email')->unique();
+        Schema::table('requests', function (Blueprint $table) {
+            $table->boolean('pay');
         });
     }
 
@@ -29,6 +25,8 @@ class CreateTableClients extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::table('requests', function (Blueprint $table) {
+            $table->dropColumn('pay');
+        });
     }
 }

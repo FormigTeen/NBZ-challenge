@@ -21,6 +21,7 @@ class AddRelationsWithProductsClients extends Migration
                 ->onDelete('cascade');
 
             $table->integer('product_id')->unsigned();
+
             $table->foreign('product_id')
                 ->references('id')->on('products')
                 ->onDelete('cascade');
@@ -35,8 +36,11 @@ class AddRelationsWithProductsClients extends Migration
     public function down()
     {
         Schema::table('requests', function (Blueprint $table) {
-            $table->dropForeign('product_id');
-            $table->dropForeign('client_id');
+            $table->dropForeign(['product_id']);
+            $table->dropForeign(['client_id']);
+
+            $table->dropColumn('product_id');
+            $table->dropColumn('client_id');
         });
     }
 }

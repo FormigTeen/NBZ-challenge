@@ -22,3 +22,39 @@ Será avaliado a escrita do código. Códigos mais modularizados receberão mais
    
 ## Entrega
 Para entregar o desafio, basta fazer um fork desse repositorio e submeter um pull request. 
+
+## Instruções de Uso
+
+### Requisitos:
++ Vagrant >= 1.9
++ VirtualBox 5.2
+
+1. Execute o Seguinte comando para fazer a configuração automática na pasta 'test':
+
+Linux:
+```
+php vendor/bin/homestead make
+```
+
+Windows:
+```
+vendor\\bin\\homestead make
+```
+
+2. Habilite o Acesso ao Endereço do Projeto adicionanado a seguinte linha no arquivo '/etc/hosts'
+
+```
+192.168.10.10  homestead.test
+```
+
+3. Na pasta do Projeto, execute o seguinte comando para ligar a VM:
+
+```
+vagrant up
+```
+
+4. Por ultimo, faça a migração:
+
+```
+php artisan migrate:refresh --seed
+```
