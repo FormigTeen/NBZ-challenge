@@ -35,7 +35,8 @@ Para entregar o desafio, basta fazer um fork desse repositorio e submeter um pul
 1. Atualize o Composer
 
 ```
-composer update```
+composer update
+```
 
 2. Faça a configuração automática:
 
